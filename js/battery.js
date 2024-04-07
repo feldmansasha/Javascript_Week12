@@ -7,6 +7,7 @@ const chargeLevel = document.querySelector('#battery dd:nth-of-type(2) output');
 // STEP 1c: Grab the <progress> element inside the second <dd> element for a more graphical representation of the battery's state of charge (SOC)
 const chargeMeter = document.querySelector('#battery dd:nth-of-type(2) progress');
 
+//Grab <img> element to add src of the picture later
 const robot=document.querySelector('img');
 
 /* Functions
@@ -25,7 +26,9 @@ else{
 chargeLevel.textContent=(battery.level*100)+"%";
 chargeMeter.value=battery.level*100;
 
+//Create url depending on the computer charging level
 const url=`https://robohash.org/${battery.level*100}percent.png`;
+// Change attribite for <img> element
 robot.setAttribute("src", url);
 }
 
